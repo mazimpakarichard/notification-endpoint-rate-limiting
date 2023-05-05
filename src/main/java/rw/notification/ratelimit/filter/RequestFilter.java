@@ -41,7 +41,7 @@ public class RequestFilter extends OncePerRequestFilter {
 		if (request.getRequestURI().startsWith("/notifications")) {
 			String clientCode = request.getHeader("clientCode");
 			if (StringUtils.isNotBlank(clientCode)) {
-				Throttling throttling = rateLimiter.getThrottlingConfiguration(serverName);
+				//Throttling throttling = rateLimiter.getThrottlingConfiguration(serverName);
 				Bucket bucket = rateLimiter.resolveBucketForClient(clientCode);
 
 				// do the soft throttling
